@@ -13,12 +13,12 @@ class _startState extends State<start> {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
-      appBar: AppBar(title: Text('Scoreboards available')),
+      appBar: AppBar(title: const Text('Scoreboards available')),
       body: Row(children: [
         Container(
-          child: Text('Hello'),
           color: Colors.red,
-          padding: EdgeInsets.all(20),
+          padding:const EdgeInsets.all(20),
+          child:const Text('Hello'),
         )
       ]),
     ));

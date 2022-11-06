@@ -57,6 +57,7 @@ class _FlutterDemoState extends State<FlutterDemo> {
               // ),
               // TextButton(onPressed: _decrementCounter, child: Text('Reduce')),
               Expanded(
+                  flex: 5 + a,
                   child: GestureDetector(
                     onTap: increasea,
                     child: Container(
@@ -68,9 +69,9 @@ class _FlutterDemoState extends State<FlutterDemo> {
                         style: TextStyle(fontSize: 30),
                       )),
                     ),
-                  ),
-                  flex: 5 + a),
+                  )),
               Expanded(
+                flex: 5 + b,
                 child: GestureDetector(
                   onTap: increaseb,
                   child: Container(
@@ -83,7 +84,6 @@ class _FlutterDemoState extends State<FlutterDemo> {
                     )),
                   ),
                 ),
-                flex: 5 + b,
               ),
             ]),
       ),
