@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:preview/constants/Appstyle.dart';
 
-Widget tapcard(VoidCallback onTap, data) {
+Widget tapcard(VoidCallback onTap, List data) {
+  String name = data[0];
+  int score = data[1];
   return Center(
     child: Padding(
       padding: const EdgeInsets.all(8.0),
@@ -24,11 +26,11 @@ Widget tapcard(VoidCallback onTap, data) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Players: ++++',
+                        'Player: $name',
                         style: AppStyle.mainTitle,
                       ),
                       Text(
-                        'date ++++',
+                        'Score: $score',
                         style: AppStyle.mainContent,
                       )
                     ],

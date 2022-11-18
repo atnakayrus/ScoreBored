@@ -7,7 +7,7 @@ import 'package:hive/hive.dart';
 void main() async {
   await Hive.initFlutter();
 
-  var box = Hive.openBox('mybox');
+  var box = await Hive.openBox('mybox');
   runApp(const MyApp());
 }
 
@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HiveTest(),
+      home: HomeScreen(),
     );
   }
 }

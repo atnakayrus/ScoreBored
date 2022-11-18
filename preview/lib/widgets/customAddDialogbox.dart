@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:preview/Functions/datafunctions.dart';
 import 'package:preview/constants/AppStyle.dart';
 
 class AddDialog extends StatefulWidget {
-  const AddDialog({super.key});
+  Function addEle;
+  AddDialog({super.key, required this.addEle});
 
   @override
   State<AddDialog> createState() => _AddDialogState();
@@ -10,7 +12,8 @@ class AddDialog extends StatefulWidget {
 
 class _AddDialogState extends State<AddDialog> {
   TextEditingController no_of_players = TextEditingController();
-  int players = 1;
+  double players = 1;
+  HiveFunctions func = HiveFunctions();
   List<int> options = [1, 2, 3, 4, 5, 6, 7, 8];
   @override
   Widget build(BuildContext context) {
@@ -25,25 +28,48 @@ class _AddDialogState extends State<AddDialog> {
           ),
         ],
       )),
-      content: SizedBox(
-        height: 150,
+      content: Container(
+        height: 100,
         child: Column(
           children: [
-            Row(
-              children: [
-                const Text('Enter Number of Players'),
-                // DropdownButtonFormField(
-                //   items: options.map((int item) {
-                //     return DropdownMenuItem(value: item, child: Text('$item'));
-                //   }).toList(),
-                //   onChanged: (newval) {},
-                // )
-              ],
+            const Text('Enter Number of Players'),
+            Slider(
+              min: 1,
+              max: 8,
+              value: players,
+              divisions: 7,
+              onChanged: (value) {
+                setState(() {
+                  players = value;
+                });
+              },
             ),
+            Text(
+              (players.toInt()).toString(),
+              style: AppStyle.mainTitle,
+            )
           ],
         ),
       ),
-      actions: [ElevatedButton(onPressed: () {}, child: Text('Submit'))],
+      actionsAlignment: MainAxisAlignment.spaceEvenly,
+      actions: [
+        MaterialButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          color: AppStyle.accentColor,
+          child: Text('Cancel'),
+        ),
+        MaterialButton(
+          onPressed: () {
+            List li = func.newScoreBoards(players.toInt());
+            widget.addEle(li);
+            Navigator.of(context).pop();
+          },
+          color: AppStyle.accentColor,
+          child: Text('Submit'),
+        ),
+      ],
     );
   }
 }

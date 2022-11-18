@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:preview/Functions/datafunctions.dart';
 import 'package:preview/constants/Appstyle.dart';
 
-Widget scorecard(VoidCallback onTap, data) {
+Widget scorecard(VoidCallback onTap, VoidCallback onDelete, List data) {
+  HiveFunctions func = HiveFunctions();
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: InkWell(
@@ -20,7 +22,7 @@ Widget scorecard(VoidCallback onTap, data) {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Players: ++++',
+                      func.allPlayers(data),
                       style: AppStyle.mainTitle,
                     ),
                     Text(
@@ -31,7 +33,7 @@ Widget scorecard(VoidCallback onTap, data) {
                 ),
               ),
             ),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.delete)),
+            IconButton(onPressed: onDelete, icon: const Icon(Icons.delete)),
             IconButton(onPressed: () {}, icon: const Icon(Icons.play_arrow)),
           ],
         ),
