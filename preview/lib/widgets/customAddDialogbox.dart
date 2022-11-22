@@ -6,8 +6,8 @@ import 'package:preview/constants/AppStyle.dart';
 import 'PlayerDataDialog.dart';
 
 class AddDialog extends StatefulWidget {
-  Function addEle;
-  AddDialog({super.key, required this.addEle});
+  final Function addEle;
+  const AddDialog({super.key, required this.addEle});
 
   @override
   State<AddDialog> createState() => _AddDialogState();
@@ -15,10 +15,10 @@ class AddDialog extends StatefulWidget {
 
 class _AddDialogState extends State<AddDialog> {
   DataBase db = DataBase();
-  TextEditingController no_of_players = TextEditingController();
+  TextEditingController noOfPlayers = TextEditingController();
   double players = 1;
   HiveFunctions func = HiveFunctions();
-  List<int> options = [1, 2, 3, 4, 5, 6, 7, 8];
+  // List<int> options = [1, 2, 3, 4, 5, 6, 7, 8];
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -32,7 +32,7 @@ class _AddDialogState extends State<AddDialog> {
           ),
         ],
       )),
-      content: Container(
+      content: SizedBox(
         height: 100,
         child: Column(
           children: [
@@ -63,12 +63,10 @@ class _AddDialogState extends State<AddDialog> {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         MaterialButton(
           onPressed: () {
-            List li = func.newScoreBoards(players.toInt());
-            // widget.addEle(li);
             Navigator.of(context).pop();
             showDialog(
                 context: context,
@@ -76,7 +74,7 @@ class _AddDialogState extends State<AddDialog> {
                     PlayerDialog(addEle: widget.addEle, num: players.toInt()));
           },
           color: AppStyle.accentColor,
-          child: Text('Submit'),
+          child: const Text('Submit'),
         ),
       ],
     );

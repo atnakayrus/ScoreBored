@@ -4,6 +4,7 @@ import 'package:preview/constants/Appstyle.dart';
 import 'package:preview/widgets/scoreIncrease.dart';
 import 'package:preview/widgets/tapCards.dart';
 
+// ignore: must_be_immutable
 class TapIncrease extends StatefulWidget {
   List data;
   Function onIncrease;

@@ -5,10 +5,10 @@ import 'package:preview/constants/Appstyle.dart';
 import 'package:preview/screens/tapIncrease.dart';
 import 'package:preview/widgets/ScoreCard.dart';
 import 'package:preview/widgets/customAddDialogbox.dart';
-import 'package:preview/widgets/tapCards.dart';
 import 'package:preview/Functions/hivefn.dart';
 
 class HomeScreen extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
   HomeScreen({super.key});
   @override
   State<HomeScreen> createState() => _HomeScreenState();

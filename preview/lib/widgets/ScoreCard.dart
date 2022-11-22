@@ -1,9 +1,12 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:preview/Functions/datafunctions.dart';
 import 'package:preview/constants/Appstyle.dart';
 import 'package:preview/widgets/confirmpopup.dart';
 
+// ignore: must_be_immutable
 class scorecard extends StatelessWidget {
   scorecard({
     super.key,
@@ -28,7 +31,7 @@ class scorecard extends StatelessWidget {
         // borderRadius: BorderRadius.circular(10),
         onLongPress: onLongPress,
         child: Slidable(
-          endActionPane: ActionPane(motion: StretchMotion(), children: [
+          endActionPane: ActionPane(motion: const StretchMotion(), children: [
             SlidableAction(
               backgroundColor: Colors.red,
               onPressed: (context) {

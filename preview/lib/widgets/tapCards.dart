@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:preview/constants/Appstyle.dart';
@@ -6,6 +8,7 @@ import 'package:preview/widgets/currentScore.dart';
 import 'package:preview/widgets/nameChange.dart';
 import 'package:preview/widgets/scoreIncrease.dart';
 
+// ignore: must_be_immutable
 class tapcard extends StatefulWidget {
   VoidCallback onTap;
   List data;
@@ -73,7 +76,7 @@ class _tapcardState extends State<tapcard> {
                     context: context,
                     builder: ((context) => widget.size == 1
                         ? AlertDialog(
-                            titlePadding: EdgeInsets.all(24),
+                            titlePadding: const EdgeInsets.all(24),
                             backgroundColor: AppStyle.bgCardColor,
                             title: const Text(
                                 'You cannot delete the last person in the scoreboard'),

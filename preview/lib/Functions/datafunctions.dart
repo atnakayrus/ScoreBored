@@ -8,7 +8,7 @@ class HiveFunctions {
     return (players);
   }
 
-  String ScoreHistory(List data) {
+  String scoreHistory(List data) {
     String players = ' ';
     int len = data.length;
     for (int i = 0; i < len; i++) {

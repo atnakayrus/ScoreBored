@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:preview/Functions/datafunctions.dart';
 import 'package:preview/constants/AppStyle.dart';
 
+// ignore: must_be_immutable
 class PlayerDialog extends StatefulWidget {
   Function addEle;
   int num;
@@ -14,7 +15,6 @@ class PlayerDialog extends StatefulWidget {
 class _PlayerDialogState extends State<PlayerDialog> {
   late List<TextEditingController> namePlayer = [];
   HiveFunctions func = HiveFunctions();
-  List<int> options = [1, 2, 3, 4, 5, 6, 7, 8];
   @override
   void initState() {
     for (int i = 0; i < widget.num; i++) {
@@ -36,7 +36,7 @@ class _PlayerDialogState extends State<PlayerDialog> {
           ),
         ],
       )),
-      content: Container(
+      content: SizedBox(
         // height: 300,
         width: 300,
         child: ListView.builder(
@@ -44,7 +44,7 @@ class _PlayerDialogState extends State<PlayerDialog> {
           itemBuilder: (context, index) {
             return TextField(
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 hintText: 'Player ${index + 1} name',
               ),
               controller: namePlayer[index],
@@ -61,7 +61,7 @@ class _PlayerDialogState extends State<PlayerDialog> {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         MaterialButton(
           onPressed: () {
@@ -76,7 +76,7 @@ class _PlayerDialogState extends State<PlayerDialog> {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: Text('Submit'),
+          child: const Text('Submit'),
         ),
       ],
     );

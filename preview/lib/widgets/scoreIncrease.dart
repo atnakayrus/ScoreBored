@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/AppStyle.dart';
 
+// ignore: must_be_immutable
 class ScoreIncrease extends StatelessWidget {
   ScoreIncrease(
       {super.key,
@@ -28,7 +29,7 @@ class ScoreIncrease extends StatelessWidget {
           ),
         ],
       )),
-      content: Container(
+      content: SizedBox(
         // height: 300,
         width: 300,
         child: ListView.builder(
@@ -37,7 +38,7 @@ class ScoreIncrease extends StatelessWidget {
             String name = data[index][0];
             return TextField(
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 hintText: '$name\'s Score',
               ),
               controller: scorePlayer[index],
@@ -55,7 +56,7 @@ class ScoreIncrease extends StatelessWidget {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         MaterialButton(
           onPressed: () {
@@ -69,7 +70,7 @@ class ScoreIncrease extends StatelessWidget {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: Text('Submit'),
+          child: const Text('Submit'),
         ),
       ],
     );

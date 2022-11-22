@@ -3,8 +3,8 @@ import 'package:preview/Functions/datafunctions.dart';
 import 'package:preview/constants/Appstyle.dart';
 
 class CurrentScore extends StatelessWidget {
-  List data;
-  CurrentScore({super.key, required this.data});
+  final List data;
+  const CurrentScore({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class CurrentScore extends StatelessWidget {
       backgroundColor: AppStyle.bgCardColor,
       title: Text('$name \'s Score History'),
       content: Text(
-        fun.ScoreHistory(data[2]),
+        fun.scoreHistory(data[2]),
         softWrap: true,
       ),
     );

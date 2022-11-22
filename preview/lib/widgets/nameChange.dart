@@ -28,7 +28,7 @@ class NameChange extends StatelessWidget {
       )),
       content: TextField(
         decoration: InputDecoration(
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           hintText: '$name\'s New name',
         ),
         controller: namePlayerEdit,
@@ -41,7 +41,7 @@ class NameChange extends StatelessWidget {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         MaterialButton(
           onPressed: () {
@@ -51,7 +51,7 @@ class NameChange extends StatelessWidget {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: Text('Submit'),
+          child: const Text('Submit'),
         ),
       ],
     );
