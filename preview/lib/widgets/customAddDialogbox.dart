@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:preview/Functions/datafunctions.dart';
+import 'package:preview/Functions/hivefn.dart';
 import 'package:preview/constants/AppStyle.dart';
+
+import 'PlayerDataDialog.dart';
 
 class AddDialog extends StatefulWidget {
   Function addEle;
@@ -11,6 +14,7 @@ class AddDialog extends StatefulWidget {
 }
 
 class _AddDialogState extends State<AddDialog> {
+  DataBase db = DataBase();
   TextEditingController no_of_players = TextEditingController();
   double players = 1;
   HiveFunctions func = HiveFunctions();
@@ -42,6 +46,7 @@ class _AddDialogState extends State<AddDialog> {
                 setState(() {
                   players = value;
                 });
+                db.updateData();
               },
             ),
             Text(
@@ -63,8 +68,12 @@ class _AddDialogState extends State<AddDialog> {
         MaterialButton(
           onPressed: () {
             List li = func.newScoreBoards(players.toInt());
-            widget.addEle(li);
+            // widget.addEle(li);
             Navigator.of(context).pop();
+            showDialog(
+                context: context,
+                builder: (context) =>
+                    PlayerDialog(addEle: widget.addEle, num: players.toInt()));
           },
           color: AppStyle.accentColor,
           child: Text('Submit'),

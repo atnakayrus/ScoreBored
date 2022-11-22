@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:preview/screens/hivetest.dart';
 import 'package:preview/screens/homescreen.dart';
 import 'package:hive/hive.dart';
 
 void main() async {
   await Hive.initFlutter();
 
-  var box = await Hive.openBox('mybox');
+  var box = await Hive.openBox('Scores');
   runApp(const MyApp());
 }
 

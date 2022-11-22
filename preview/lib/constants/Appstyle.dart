@@ -7,11 +7,28 @@ class AppStyle {
   static Color bgCardColor = const Color(0xFFA6A0C1);
 
   static TextStyle mainTitle = const TextStyle(
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: FontWeight.bold,
   );
   static TextStyle mainContent = const TextStyle(
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: FontWeight.normal,
   );
+  static List<BoxShadow> borderShadow = const [
+    BoxShadow(
+      color: Colors.black45,
+      offset: Offset(
+        5.0,
+        5.0,
+      ),
+      blurRadius: 8.0,
+      spreadRadius: 2.0,
+    ), //BoxShadow
+    BoxShadow(
+      color: Colors.white,
+      offset: Offset(0.0, 0.0),
+      blurRadius: 0.0,
+      spreadRadius: 0.0,
+    ), //BoxShadow
+  ];
 }
