@@ -67,9 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => TapIncrease(
-                            data: db.scoreBoards[index],
+                            data: db
+                                .scoreBoards[db.scoreBoards.length - index - 1],
                             onIncrease: addScore,
-                            index: index,
+                            index: db.scoreBoards.length - index - 1,
                             editName: editName,
                           ))).then((value) {
                 setState(() {});
@@ -78,14 +79,14 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             onDelete: () {
               setState(() {
-                db.scoreBoards.removeAt(index);
-                db.dates.removeAt(index);
+                db.scoreBoards.removeAt(db.scoreBoards.length - index - 1);
+                db.dates.removeAt(db.scoreBoards.length - index - 1);
               });
               db.updateData();
             },
-            data: db.scoreBoards[index],
+            data: db.scoreBoards[db.scoreBoards.length - index - 1],
             onLongPress: () {},
-            date: db.dates[index],
+            date: db.dates[db.scoreBoards.length - index - 1],
           );
         }),
         itemCount: db.scoreBoards.length,

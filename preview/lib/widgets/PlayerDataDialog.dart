@@ -61,7 +61,10 @@ class _PlayerDialogState extends State<PlayerDialog> {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: const Text('Cancel'),
+          child: Text(
+            'Cancel',
+            style: AppStyle.buttonText,
+          ),
         ),
         MaterialButton(
           onPressed: () {
@@ -76,7 +79,10 @@ class _PlayerDialogState extends State<PlayerDialog> {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: const Text('Submit'),
+          child: Text(
+            'Submit',
+            style: AppStyle.buttonText,
+          ),
         ),
       ],
     );

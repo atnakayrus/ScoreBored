@@ -18,7 +18,6 @@ class _AddDialogState extends State<AddDialog> {
   TextEditingController noOfPlayers = TextEditingController();
   double players = 1;
   HiveFunctions func = HiveFunctions();
-  // List<int> options = [1, 2, 3, 4, 5, 6, 7, 8];
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -63,7 +62,10 @@ class _AddDialogState extends State<AddDialog> {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: const Text('Cancel'),
+          child: Text(
+            'Cancel',
+            style: AppStyle.buttonText,
+          ),
         ),
         MaterialButton(
           onPressed: () {
@@ -74,7 +76,10 @@ class _AddDialogState extends State<AddDialog> {
                     PlayerDialog(addEle: widget.addEle, num: players.toInt()));
           },
           color: AppStyle.accentColor,
-          child: const Text('Submit'),
+          child: Text(
+            'Submit',
+            style: AppStyle.buttonText,
+          ),
         ),
       ],
     );

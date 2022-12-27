@@ -16,7 +16,10 @@ class ConfirmPopUp extends StatelessWidget {
             Navigator.of(context).pop();
           },
           color: AppStyle.accentColor,
-          child: const Text('No'),
+          child: Text(
+            'No',
+            style: AppStyle.buttonText,
+          ),
         ),
         MaterialButton(
           onPressed: () {
@@ -24,7 +27,10 @@ class ConfirmPopUp extends StatelessWidget {
             Navigator.of(context).pop();
           },
           color: Colors.red,
-          child: const Text('Yes'),
+          child: const Text(
+            'Yes',
+            style: TextStyle(color: Colors.black),
+          ),
         )
       ],
     );

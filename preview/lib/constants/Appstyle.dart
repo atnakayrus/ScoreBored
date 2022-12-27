@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppStyle {
-  static Color accentColor = const Color(0xFF5D5393);
-  static Color mainColor = const Color(0xFF231858);
-  static Color bgColor = const Color(0xFF867DB0);
-  static Color bgCardColor = const Color(0xFFA6A0C1);
+  static Color accentColor = const Color(0xFF2C3333);
+  static Color mainColor = const Color(0xFF395B64);
+  static Color bgColor = const Color(0xFFA5C9CA);
+  static Color bgCardColor = const Color(0xFFE7F6F2);
 
   static TextStyle mainTitle = const TextStyle(
     fontSize: 22,
@@ -31,4 +31,7 @@ class AppStyle {
       spreadRadius: 0.0,
     ), //BoxShadow
   ];
+  static TextStyle buttonText = const TextStyle(
+    color: Color(0xFFA5C9CA),
+  );
 }
