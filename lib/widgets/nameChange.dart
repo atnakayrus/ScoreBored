@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/AppStyle.dart';
+import '../constants/Appstyle.dart';
 
 class NameChange extends StatelessWidget {
   NameChange(

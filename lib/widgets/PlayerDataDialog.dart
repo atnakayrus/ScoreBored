@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:preview/Functions/datafunctions.dart';
-import 'package:preview/constants/AppStyle.dart';
+import 'package:preview/constants/Appstyle.dart';
 
 // ignore: must_be_immutable
 class PlayerDialog extends StatefulWidget {
